@@ -111,46 +111,73 @@
 
 
             <div class="app-main__outer">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col" class="text-center">Nama Guru</th>
-                            <th scope="col" class="text-center">NIK</th>
-                            <th scope="col" class="text-center">Gender</th>
-                            <th scope="col" class="text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($result as $row):
-                            $no++ ?>
-                            <tr>
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-card mb-3 card">
+                            <div class="card-header">Data Guru
+                                <div class="btn-actions-pane-right">
+                                    <div role="group" class="btn-group-sm btn-group">
+                                        <button class="active btn btn-focus">Last Week</button>
+                                        <button class="btn btn-focus">All Month</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">No</th>
+                                            <th scope="col" class="">Nama Guru</th>
+                                            <th scope="col" class="text-center">NIK</th>
+                                            <th scope="col" class="text-center">Gender</th>
+                                           
+                                            <th scope="col" class="text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no = 0;
+                                        foreach ($result as $row):
+                                            $no++ ?>
+                                            <tr>
+                                                <td data-cell="No" class="text-center text-muted">
+                                                    <?php echo $no ?>
+                                                </td>
+                                                <td data-cell="Nama" class="text-center text-muted">
+                                                    <?php echo $row->nama_guru; ?>
+                                                </td>
 
-                                <th data-cell="No" class="text-center" scope="row">
+                                                <td data-cell="NIK" class="text-center">
+                                                    <?php echo $row->nik; ?>
+                                                </td>
+                                                <td data-cell="Gender" class="text-center">
+                                                    <div class="badge badge-warning">
+                                                        <?php echo $row->gender; ?>
+                                                    </div>
+                                                </td>
+                                               
+                                                <td data-cell="Aksi" class="text-center aksi">
+                                                    <a href="<?php echo base_url('admin/update_guru/') . $row->id_guru?>"
+                                                        type="button" id="PopoverCustomT-1"
+                                                        class="btn btn-primary btn-sm edit">Update</a>
+                                                    <button onclick="hapus(<?php echo $row->id_guru ?>)" type="button"
+                                                        id="PopoverCustomT-1"
+                                                        class="btn btn-danger btn-sm hapus">Delete</button>
+                                                </td>
+                                            </tr>
 
-                                    <?php echo $no ?>
-                                </th>
-                                <td data-cell="Nama Siswa" class="text-center">
-                                    <?php echo $row->nama_guru; ?>
-                                </td>
-                                <td data-cell="Nisn" class="text-center">
-                                    <?php echo $row->nik; ?>
-                                </td>
-                                <td data-cell="Gender" class="text-center">
-                                    <?php echo $row->gender; ?>
-                                </td>
-                                <td data-cell="Aksi" class="text-center aksi">
-                                    <a href="<?php echo base_url('admin/update_guru/') . $row->id_guru ?>" type="button"
-                                        id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
-                                    <button onclick="hapus(<?php echo $row->id_guru ?>)" type="button" id="PopoverCustomT-1"
-                                        class="btn btn-danger btn-sm hapus">Hapus</button>
-                                </td>
 
-                            </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-block text-center card-footer">
+                             
+                                <a href="<?php echo base_url('admin/tambah_guru/')?>" class="btn-wide btn btn-success">Create</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
 
             </div>
 

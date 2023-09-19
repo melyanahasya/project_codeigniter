@@ -5,54 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
+    <!-- cdn sweetalert2 -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/sweetalert2/sweetalert2.min.css'); ?>">
+
+    <!-- cdn bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
 
     <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
         .hapus {
-            padding: 2px 10px 2px 10px;
             color: white;
             font-size: 15px;
         }
 
         .edit {
-            padding: 2px 10px 2px 10px;
             margin-right: 10px;
             color: white;
             font-size: 15px;
         }
 
-        .create {
-            margin-top: 15px;
-            margin-left: 15px;
-            margin-bottom: 15px;
-        }
-
-        .table {
-            /* margin: 3rem 2rem 6rem ;
-            margin-right: 40em; */
-            margin-top: 2rem;
-            /* margin-left: 1rem; */
+        a {
+            color: white;
         }
 
         @media (max-width: 600px) {
 
             .edit {
-                margin-left: 4.5em;
                 color: white;
                 font-size: 16px;
-                width: 3.5em;
+                width: 4.5em;
 
             }
 
-            .hapus {
-                width: 4.5em;
-                padding: 2px 10px 2px 10px;
-                font-size: 16px;
+            .aksi {
+                display: flex;
+                gap: 2rem;
+            }
 
-                position: relative;
+            .hapus {
+                width: 5em;
+                font-size: 16px;
             }
 
             tbody {
@@ -96,6 +96,8 @@
     </style>
 </head>
 
+<script src="<?php echo base_url('assets/sweetalert2/sweetalert2.min.js'); ?>"></script>
+
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <?php include('navbar.php'); ?>
@@ -110,60 +112,85 @@
             <?php include('sidebar.php'); ?>
 
 
+
+
             <div class="app-main__outer">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col" class="text-center">Nama Siswa</th>
-                            <th scope="col" class="text-center">Nisn</th>
-                            <th scope="col" class="text-center">Gender</th>
-                            <th scope="col" class="text-center">Tanggal Lahir</th>
-                            <th scope="col" class="text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $no = 0;
-                        foreach ($result as $row):
-                            $no++ ?>
-                            <tr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-card mb-3 card">
+                            <div class="card-header">Data Siswa
+                                <div class="btn-actions-pane-right">
+                                    <div role="group" class="btn-group-sm btn-group">
+                                        <button class="active btn btn-focus">Last Week</button>
+                                        <button class="btn btn-focus">All Month</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">No</th>
+                                            <th scope="col" class="">Nama Siswa</th>
+                                            <th scope="col" class="text-center">Nisn</th>
+                                            <th scope="col" class="text-center">Gender</th>
+                                            <th scope="col" class="text-center">Tanggal Lahir</th>
+                                            <th scope="col" class="text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no = 0;
+                                        foreach ($result as $row):
+                                            $no++ ?>
+                                            <tr>
+                                                <td data-cell="No" class="text-center text-muted">
+                                                    <?php echo $no ?>
+                                                </td>
+                                                <td data-cell="Nama" class="text-center text-muted">
+                                                    <?php echo $row->nama_siswa; ?>
+                                                </td>
 
-                                <th data-cell="No" class="text-center" scope="row">
-                                    <?php echo $no ?>
-                                </th>
-                                <td data-cell="Nama Siswa" class="text-center">
+                                                <td data-cell="Nisn" class="text-center">
+                                                    <?php echo $row->nisn; ?>
+                                                </td>
+                                                <td data-cell="Gender" class="text-center">
+                                                    <div class="badge badge-warning">
+                                                        <?php echo $row->gender; ?>
+                                                    </div>
+                                                </td>
+                                                <td data-cell="Tanggal Lahir" class="text-center">
+                                                    <div class="">
+                                                        <?php echo $row->tanggal_lahir; ?>
+                                                    </div>
+                                                </td>
+                                                <td data-cell="Aksi" class="text-center aksi">
+                                                    <a href="<?php echo base_url('admin/update_siswa/') . $row->id_siswa ?>"
+                                                        type="button" id="PopoverCustomT-1"
+                                                        class="btn btn-primary btn-sm edit">Update</a>
+                                                    <button onclick="hapus(<?php echo $row->id_siswa ?>)" type="button"
+                                                        id="PopoverCustomT-1"
+                                                        class="btn btn-danger btn-sm hapus">Delete</button>
+                                                </td>
+                                            </tr>
 
-                                    <?php echo $row->nama_siswa; ?>
-                                </td>
-                                <td data-cell="Nisn" class="text-center">
 
-                                    <?php echo $row->nisn; ?>
-                                </td>
-                                <td data-cell="Gender" class="text-center">
-
-                                    <?php echo $row->gender; ?>
-                                </td>
-                                <td data-cell="Kelas" class="text-center">
-                                    <?php echo $row->tanggal_lahir; ?>
-                                </td>
-                                <td data-cell="Aksi" class="text-center aksi">
-                                    <a href="<?php echo base_url('admin/update_siswa/') . $row->id_siswa ?>" type="button"
-                                        id="PopoverCustomT-1" class="btn btn-success btn-sm edit">Edit</a>
-                                    <button onclick="hapus(<?php echo $row->id_siswa ?>)" type="button"
-                                        id="PopoverCustomT-1" class="btn btn-danger btn-sm hapus">Hapus</button>
-                                </td>
-
-                            </tr>
-                        <?php endforeach; ?>
-
-                    </tbody>
-                </table>
-
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-block text-center card-footer">
+                               
+                                <a href="<?php echo base_url('admin/tambah_siswa/')?>" class="btn-wide btn btn-success">Create</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
             <script>
                 function hapus(id) {
-                    var yes = confirm('Yakin di hapus?');
+                    var yes = confirm('yakin dihapus? ');
                     if (yes == true) {
                         window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id;
                     }

@@ -29,6 +29,25 @@ class Admin extends CI_Controller
         $this->load->view('admin/siswa', $data);
     }
 
+    public function tambah_siswa()
+	{
+		$data['siswa'] = $this->m_model->get_data('siswa')->result();
+		$this->load->view('admin/tambah_siswa', $data);
+	}
+
+
+
+	public function aksi_tambah_siswa()
+	{
+		$data = [
+			'nama_siswa' => $this->input->post('nama'),
+			'nisn' => $this->input->post('nisn'),
+			'gender' => $this->input->post('gender'),
+			'tanggal_lahir' => $this->input->post('tanggal'),
+		];
+		$this->m_model->tambah_siswa('siswa', $data);
+		redirect(base_url('admin/siswa'));
+	}
 
     public function update_siswa($id)
     {
@@ -69,6 +88,23 @@ class Admin extends CI_Controller
         $this->load->view('admin/guru', $data);
     }
 
+    public function tambah_guru()
+	{
+		$data['guru'] = $this->m_model->get_data('guru')->result();
+		$this->load->view('admin/tambah_guru', $data);
+	}
+
+    public function aksi_tambah_guru()
+	{
+		$data = [
+			'nama_guru' => $this->input->post('nama'),
+			'nik' => $this->input->post('nik'),
+			'gender' => $this->input->post('gender'),
+			
+		];
+		$this->m_model->tambah_guru('guru', $data);
+		redirect(base_url('admin/guru'));
+	}
     public function update_guru($id)
     {
         $data['guru'] = $this->m_model->get_id_guru('guru', 'id_guru', $id)->result();

@@ -23,7 +23,7 @@
                 </div>
                 <div class="mb-3 col-6">
                     <label for="nisn" class="form-label">Nisn</label>
-                    <input value="<?php echo $row->nisn ?>" type="text" class="form-control" id="nisn" name="nisn">
+                    <input value="<?php echo $row->nisn ?>" type="number" class="form-control" id="nisn" name="nisn">
                 </div>
                 <div class="mb-3 col-6">
                     <label for="gender" class="form-label">Gender</label>

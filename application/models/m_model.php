@@ -27,7 +27,8 @@ class M_model extends CI_Model
     //     $this->load->view('register');
     // }
 
-    public function register_user($email, $username, $password) {
+    public function register_user($email, $username, $password)
+    {
         $data = array(
             'email' => $email,
             'username' => $username,
@@ -50,6 +51,12 @@ class M_model extends CI_Model
         return $query->result();
     }
 
+    public function tambah_siswa($table, $data)
+    {
+        $this->db->insert($table, $data);
+        return $this->db->insert_id();
+    }
+
 
     public function get_all_guru()
     {
@@ -57,8 +64,14 @@ class M_model extends CI_Model
         return $query->result();
     }
 
+    public function tambah_guru($table, $data)
+    {
+        $this->db->insert($table, $data);
+        return $this->db->insert_id();
+    }
 
-    
+
+
     // 1. get id untuk Ubah
     public function get_by_id($tabel, $id_column, $id)
     {
