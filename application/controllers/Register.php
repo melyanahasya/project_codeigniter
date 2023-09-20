@@ -29,7 +29,7 @@ class Register extends CI_Controller {
             $email = $this->input->post('email');
             $username = $this->input->post('username');
             $password = md5($this->input->post('password'));
-
+        
             // Panggil model untuk menyimpan data ke database
             $this->m_model->register_user($email,$username, $password);
 

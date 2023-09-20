@@ -121,8 +121,8 @@
                             <div class="card-header">Data Siswa
                                 <div class="btn-actions-pane-right">
                                     <div role="group" class="btn-group-sm btn-group">
-                                        <button class="active btn btn-focus">Last Week</button>
-                                        <button class="btn btn-focus">All Month</button>
+                                    <a href="<?php echo base_url('admin/tambah_siswa/')?>" class="btn-wide btn btn-success">Create</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -178,9 +178,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="d-block text-center card-footer">
+                            <div class="d-block text-center card-footer"    >
                                
-                                <a href="<?php echo base_url('admin/tambah_siswa/')?>" class="btn-wide btn btn-success">Create</a>
                             </div>
                         </div>
                     </div>
