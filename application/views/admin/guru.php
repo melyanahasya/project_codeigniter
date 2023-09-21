@@ -30,14 +30,14 @@
             margin-bottom: 15px;
         }
 
-        .table {
-            /* margin: 3rem 2rem 6rem ;
-            margin-right: 40em; */
-            margin-top: 2rem;
-            /* margin-left: 2rem; */
+        .for-all {
+            margin: 1.5rem;
         }
 
         @media (max-width: 600px) {
+            .for-all {
+                margin: 1rem;
+            }
 
             .edit {
                 margin-left: 4.5em;
@@ -110,8 +110,8 @@
             <?php include('sidebar.php'); ?>
 
 
-            <div class="app-main__outer">
-            <div class="row">
+            <div class="app-main__outer for-all">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="main-card mb-3 card">
                             <div class="card-header">Data Guru
@@ -130,7 +130,7 @@
                                             <th scope="col" class="">Nama Guru</th>
                                             <th scope="col" class="text-center">NIK</th>
                                             <th scope="col" class="text-center">Gender</th>
-                                           
+
                                             <th scope="col" class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
@@ -154,9 +154,9 @@
                                                         <?php echo $row->gender; ?>
                                                     </div>
                                                 </td>
-                                               
+
                                                 <td data-cell="Aksi" class="text-center aksi">
-                                                    <a href="<?php echo base_url('admin/update_guru/') . $row->id_guru?>"
+                                                    <a href="<?php echo base_url('admin/update_guru/') . $row->id_guru ?>"
                                                         type="button" id="PopoverCustomT-1"
                                                         class="btn btn-primary btn-sm edit">Update</a>
                                                     <button onclick="hapus(<?php echo $row->id_guru ?>)" type="button"
@@ -171,13 +171,14 @@
                                 </table>
                             </div>
                             <div class="d-block text-center card-footer">
-                             
-                                <a href="<?php echo base_url('admin/tambah_guru/')?>" class="btn-wide btn btn-success">Create</a>
+
+                                <a href="<?php echo base_url('admin/tambah_guru/') ?>"
+                                    class="btn-wide btn btn-success">Create</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
 
             </div>
 

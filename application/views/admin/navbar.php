@@ -153,7 +153,7 @@
                         </div>
                         <ul class="header-menu nav">
                             <li class="nav-item">
-                                <a href="javascript:void(0);" class="nav-link">
+                                <a href="<?php echo base_url('admin/dashboard')?>" class="nav-link">
                                     <i class="nav-link-icon fa fa-database"> </i>
                                     Home
                                 </a>

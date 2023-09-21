@@ -20,7 +20,7 @@ class Admin extends CI_Controller
     {
         $data['result'] = $this->m_model->get_data('siswa')->num_rows();
         $data['guru'] = $this->m_model->get_data('guru')->num_rows();
-        $data['mapel'] = $this->m_model->get_data('mapel')->num_rows();
+        $data['admin'] = $this->m_model->get_data('admin')->num_rows();
         $this->load->view('admin/dashboard', $data);
     }
 

@@ -21,6 +21,7 @@
             padding: 0;
             margin: 0;
         }
+
         .hapus {
             color: white;
             font-size: 15px;
@@ -36,7 +37,16 @@
             color: white;
         }
 
+        .for-all {
+            margin: 1.5rem;
+        }
+
         @media (max-width: 600px) {
+
+
+            .for-all {
+                margin: 1rem;
+            }
 
             .edit {
                 color: white;
@@ -114,14 +124,15 @@
 
 
 
-            <div class="app-main__outer">
+            <div class="app-main__outer for-all">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="main-card mb-3 card">
                             <div class="card-header">Data Siswa
                                 <div class="btn-actions-pane-right">
                                     <div role="group" class="btn-group-sm btn-group">
-                                    <a href="<?php echo base_url('admin/tambah_siswa/')?>" class="btn-wide btn btn-success">Create</a>
+                                        <a href="<?php echo base_url('admin/tambah_siswa/') ?>"
+                                            class="btn-wide btn btn-success">Create</a>
 
                                     </div>
                                 </div>
@@ -178,13 +189,13 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="d-block text-center card-footer"    >
-                               
+                            <div class="d-block text-center card-footer">
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <script>
