@@ -35,6 +35,10 @@
                         <option value="Laki-Laki">Laki-Laki</option>
                     </select>
                 </div>
+                <div class="mb-3 col-6">
+                    <label for="mapel" class="form-label">Nama Mapel</label>
+                    <input value="<?php echo $row->mapel ?>" type="text" class="form-control" id="mapel" name="mapel">
+                </div>
 
                 <button name="submit" type="submit" style="width:60px" class="btn btn-sm btn-success"
                     name="submit">Update</button>

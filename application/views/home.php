@@ -1530,21 +1530,22 @@
         </section>
 
         <section id="highlights">
-            <h1 class="sec-heading">Company Highlights</h1>
+            <h1 class="sec-heading">
+                School Highlights</h1>
 
             <div class="slider">
                 <div class="col-6 slide-text">
                     <div>
-                        <h2>Team iTechnology at IBM, Americas 2019, Los Angeles</h2>
+                        <h2>Team Bina Nusantara , Semarang 2023, Indonesia</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text.
+                            The student council and scouts play a role in organizing various events at school with the
+                            aim of advancing the school and expanding the name of our student council organization
                         </p>
                         <a href="" class="brand-btn">See More</a>
                     </div>
                 </div>
                 <div class="col-6 slide-img">
-                    <img src="https://www.dropbox.com/s/vnkswx20c0dg5ta/analyzing.jpg?raw=1"
+                    <img src="https://cabdindikwil1.com/wp-content/uploads/2022/03/lomba-rev.jpg"
                         alt="Team Work in Los Angeles" title="Company Team Work" />
                 </div>
             </div>
@@ -1553,22 +1554,20 @@
         <section id="partners" class="brand-logos">
             <h1 class="sec-heading">Our Partners</h1>
             <div>
-                <a><img src="https://www.dropbox.com/s/mk5ca04seizpf8l/aws.svg?raw=1" alt="Work with AWS"
-                        title="Our Work"></a>
-                <a><img src="https://www.dropbox.com/s/r9utt5nj9k9m1t8/Dell.png?raw=1" alt="Dell"
-                        title="Work with Dell"></a>
+
                 <a><img src="https://www.dropbox.com/s/umw9g0zgm1ecfvn/Intel.png?raw=1" alt="intel"
                         title="Work with intell"></a>
-                <a><img src="https://www.dropbox.com/s/x0hrha2dosey99z/ibm.png?raw=1" alt="IBM"
-                        title="Work with IBM"></a>
-                <a><img src="https://www.dropbox.com/s/ekzu1wcki6jziay/Microsoft.svg?raw=1" alt="Microsoft"
+                <a><img src="<?php echo base_url('/assets/image/logoAHM.png') ?>" alt="IBM" title="Work with AHM"></a>
+                <a><img src="<?php echo base_url('/assets/image/logo g2.jpg') ?>" alt="Work with G2"
+                        title="Our Work"></a>
+                <a><img src="<?php echo base_url('/assets/image/logoalfamart.png') ?>" alt="Dell"
+                        title="Work with Alfamart"></a>
+                <a><img src="<?php echo base_url('/assets/image/excellent.webp') ?>" alt="Microsoft"
                         title="Work with Microsoft"></a>
-                <a><img src="https://www.dropbox.com/s/lvl5cp14i3v0wgi/Nasscom.png?raw=1" alt="Nasscom"
-                        title="Work with Nasscom"></a>
+               
                 <a><img src="https://www.dropbox.com/s/h66k9jaaknxaum4/Samsung.png?raw=1" alt="Samsung"
                         title="Work with Samsung"></a>
-                <a><img src="https://www.dropbox.com/s/86cbtf78khj0q9z/Nvidia.png?raw=1" alt="Nvidia"
-                        title="Work with Nvidia"></a>
+              
             </div>
         </section>
 

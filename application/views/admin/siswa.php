@@ -106,7 +106,7 @@
     </style>
 </head>
 
-<script src="<?php echo base_url('assets/sweetalert2/sweetalert2.min.js'); ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -200,10 +200,22 @@
 
             <script>
                 function hapus(id) {
-                    var yes = confirm('yakin dihapus? ');
-                    if (yes == true) {
-                        window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id;
-                    }
+                    Swal.fire({
+                        title: 'Confirm delete',
+                        text: 'You want to delete?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "<?php echo base_url(
+                                'admin/hapus_siswa/'
+                            ); ?>" + id;
+                        }
+                    });
                 }
             </script>
 </body>

@@ -77,15 +77,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="elements-navigation.html">
+                                <a href="#">
                                     <i class="metismenu-icon">
-                                    </i>Sekolah
+                                    </i>Mapel
                                 </a>
                             </li>
                             <li>
-                                <a href="elements-utilities.html">
+                                <a href="#">
                                     <i class="metismenu-icon">
-                                    </i>Utilities
+                                    </i>Sekolah
                                 </a>
 
             </div>

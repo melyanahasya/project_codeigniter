@@ -96,6 +96,8 @@
     </style>
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <?php include('navbar.php'); ?>
@@ -117,8 +119,9 @@
                             <div class="card-header">Data Guru
                                 <div class="btn-actions-pane-right">
                                     <div role="group" class="btn-group-sm btn-group">
-                                        <button class="active btn btn-focus">Last Week</button>
-                                        <button class="btn btn-focus">All Month</button>
+
+                                        <a href="<?php echo base_url('admin/tambah_guru/') ?>"
+                                            class="btn-wide btn btn-success">Create</a>
                                     </div>
                                 </div>
                             </div>
@@ -130,6 +133,7 @@
                                             <th scope="col" class="">Nama Guru</th>
                                             <th scope="col" class="text-center">NIK</th>
                                             <th scope="col" class="text-center">Gender</th>
+                                            <th scope="col" class="text-center">Nama Mapel</th>
 
                                             <th scope="col" class="text-center">Aksi</th>
                                         </tr>
@@ -154,6 +158,11 @@
                                                         <?php echo $row->gender; ?>
                                                     </div>
                                                 </td>
+                                                <td data-cell="Mapel" class="text-center">
+                                                    <div >
+                                                        <?php echo $row->mapel; ?>
+                                                    </div>
+                                                </td>
 
                                                 <td data-cell="Aksi" class="text-center aksi">
                                                     <a href="<?php echo base_url('admin/update_guru/') . $row->id_guru ?>"
@@ -172,8 +181,6 @@
                             </div>
                             <div class="d-block text-center card-footer">
 
-                                <a href="<?php echo base_url('admin/tambah_guru/') ?>"
-                                    class="btn-wide btn btn-success">Create</a>
                             </div>
                         </div>
                     </div>
@@ -184,10 +191,22 @@
 
             <script>
                 function hapus(id) {
-                    var yes = confirm('Yakin di hapus?');
-                    if (yes == true) {
-                        window.location.href = "<?php echo base_url('admin/hapus_guru/') ?>" + id;
-                    }
+                    Swal.fire({
+                        title: 'Confirm delete',
+                        text: 'You want to delete?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes',
+                        cancelButtonText: 'Cancel'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "<?php echo base_url(
+                                'admin/hapus_guru/'
+                            ); ?>" + id;
+                        }
+                    });
                 }
             </script>
 </body>

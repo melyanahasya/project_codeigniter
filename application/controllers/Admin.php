@@ -102,6 +102,7 @@ class Admin extends CI_Controller
             'nama_guru' => $this->input->post('nama'),
             'nik' => $this->input->post('nik'),
             'gender' => $this->input->post('gender'),
+            'mapel' => $this->input->post('mapel'),
 
         ];
         $this->m_model->tambah_guru('guru', $data);
@@ -119,6 +120,7 @@ class Admin extends CI_Controller
             'nama_guru' => $this->input->post('nama'),
             'nik' => $this->input->post('nik'),
             'gender' => $this->input->post('gender'),
+            'mapel' => $this->input->post('mapel'),
         );
 
         $eksekusi = $this->m_model->ubah_data

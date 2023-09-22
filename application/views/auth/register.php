@@ -180,8 +180,8 @@
         .LoginPageContainer::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-        ImageContianer
-        .LoginPageContainer::-webkit-scrollbar-thumb {
+
+        ImageContianer .LoginPageContainer::-webkit-scrollbar-thumb {
             background: #2e1f7a;
         }
 
@@ -211,22 +211,30 @@
                             <label class="label" for="emailAddress"><img src="https://i.imgur.com/Hn13wvm.png"
                                     class="labelIcon"><span>Email*
                                 </span></label>
-                            <input type="email" class="input" id="emailAddress" name="email" placeholder="Enter your Email Address">
+                            <input type="email" class="input" id="emailAddress" name="email"
+                                placeholder="Enter your Email Address">
                         </div>
                         <div class="inputContainer">
                             <label class="label" for="username"><img src="https://i.imgur.com/Hn13wvm.png"
                                     class="labelIcon"><span>Username*
                                 </span></label>
-                            <input type="username" class="input" name="username" id="username" placeholder="Enter your Username">
+                            <input type="username" class="input" name="username" id="username"
+                                placeholder="Enter your Username">
                         </div>
                         <div class="inputContainer">
                             <label class="label" for="emailAddress"><img src="https://i.imgur.com/g5SvdfG.png"
                                     class="labelIcon"><span>Password*</span></label>
-                            <input name="password" type="password" class="input" id="password" placeholder="Enter your Password">
+                            <input name="password" type="password" class="input" id="password"
+                                placeholder="Enter your Password">
+
+                            <br>
+                            <label style="margin-left: 14rem;" for="showPasswordCheckbox">show password <input
+                                    type="checkbox" id="showPasswordCheckbox"></label>
                         </div>
+
                         <div class="OptionsContainer">
 
-                           <a href="/project_codeigniter/auth" >Sudah Punya Akun? Silahkan Login</a>
+                            <a href="/project_codeigniter/auth">Sudah Punya Akun? Silahkan Login</a>
                         </div>
                         <button type="submit" name="submit" class="LoginButton">Register</button>
                     </form>
@@ -235,5 +243,12 @@
         </div>
     </div>
 </body>
+
+<script>
+    document.getElementById('showPasswordCheckbox').addEventListener('change', function () {
+        const passwordInput = document.getElementById('password');
+        passwordInput.type = this.checked ? 'text' : 'password';
+    });
+</script>
 
 </html>

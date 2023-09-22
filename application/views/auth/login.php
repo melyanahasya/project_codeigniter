@@ -206,28 +206,41 @@
                     <header class="header">Login</header>
                     <header class="subHeader">Selamat datang di <b>Website kami!</b> Silahkan isi data kamu</header>
 
-                    <form  action="<?php echo base_url(); ?>Auth/aksi_login" method="post">
+                    <form action="<?php echo base_url(); ?>Auth/aksi_login" method="post">
                         <div class="inputContainer">
                             <label class="label" for="emailAddress"><img src="https://i.imgur.com/Hn13wvm.png"
                                     class="labelIcon"><span>Email*
                                 </span></label>
-                            <input type="email" name="email" class="input" id="emailAddress" placeholder="Enter your Email Address">
+                            <input type="email" name="email" class="input" id="emailAddress"
+                                placeholder="Enter your Email Address">
                         </div>
                         <div class="inputContainer">
                             <label class="label" for="emailAddress"><img src="https://i.imgur.com/g5SvdfG.png"
                                     class="labelIcon"><span>Password*</span></label>
-                            <input type="password" name="password" class="input" id="password" placeholder="Enter your Password">
+                            <input type="password" name="password" class="input" id="password"
+                                placeholder="Enter your Password">
+                            <br>
+                            <label style="margin-left: 14rem;" for="showPasswordCheckbox">show password <input
+                                    type="checkbox" id="showPasswordCheckbox"></label>
                         </div>
                         <div class="OptionsContainer">
 
-                            <p>Belum Punya Akun?</p> <a href="/project_codeigniter/auth/register" class="ForgotPasswordLink">Silahkan Register</a>
+                            <p>Belum Punya Akun?</p> <a href="/project_codeigniter/auth/register"
+                                class="ForgotPasswordLink">Silahkan Register</a>
                         </div>
                         <button name="submit" type="submit" class="LoginButton">Login</button>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    document.getElementById('showPasswordCheckbox').addEventListener('change', function () {
+        const passwordInput = document.getElementById('password');
+        passwordInput.type = this.checked ? 'text' : 'password';
+    });
+</script>
 
 </html>
