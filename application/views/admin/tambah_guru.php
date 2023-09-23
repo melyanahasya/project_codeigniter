@@ -96,36 +96,48 @@
 </head>
 
 <body>
-    <div class="app-main__outer">
 
-        <form enctype="multipart/form-data" action="<?php echo base_url('admin/aksi_tambah_guru') ?>" method="post"
-            style="margin:25px" method="post" class="row">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <?php include('navbar.php'); ?>
+        <div class="ui-theme-settings">
+            <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
+                <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+            </button>
 
-            <div class="mb-3 col-6">
-                <label for="nama" class="form-label bold">Nama Guru</label>
-                <input type="text" class="form-control" id="nama" name="nama" aria-describedby="nama">
-            </div>
-            <div class="mb-3 col-6">
-                <label for="nik" class="form-label">NIK</label>
-                <input type="number" class="form-control" id="nik" name="nik">
-            </div>
-            <div class="mb-3 col-6">
-                <label for="gender" class="form-label">Gender</label>
-                <select name="gender" class="form-select" aria-label="Default select example">
-                    <option selected>Pilih Gender</option>
-                    <option value="Perempuan">Perempuan</option>
-                    <option value="Laki-Laki">Laki-Laki</option>
-                </select>
-            </div>
-            <div class="mb-3 col-6">
-                <label for="mapel" class="form-label">Nama Mapel</label>
-                <input type="number" class="form-control" id="mapel" name="mapel">
-            </div>
+        </div>
+        <div class="app-main">
 
-            <button name="submit" type="submit" style="width:60px" class="btn btn-sm btn-success"
-                name="submit">Submit</button>
-        </form>
-    </div>
+            <?php include('sidebar.php'); ?>
+            <div class="app-main__outer">
+
+                <form enctype="multipart/form-data" action="<?php echo base_url('admin/aksi_tambah_guru') ?>"
+                    method="post" style="margin:25px" method="post" class="row">
+
+                    <div class="mb-3 col-6">
+                        <label for="nama" class="form-label bold">Nama Guru</label>
+                        <input type="text" class="form-control" id="nama" name="nama" aria-describedby="nama">
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="nik" class="form-label">NIK</label>
+                        <input type="number" class="form-control" id="nik" name="nik">
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select name="gender" class="form-select" aria-label="Default select example">
+                            <option selected>Pilih Gender</option>
+                            <option value="Perempuan">Perempuan</option>
+                            <option value="Laki-Laki">Laki-Laki</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="mapel" class="form-label">Nama Mapel</label>
+                        <input type="number" class="form-control" id="mapel" name="mapel">
+                    </div>
+
+                    <button name="submit" type="submit" style="width:60px" class="btn btn-sm btn-success"
+                        name="submit">Submit</button>
+                </form>
+            </div>
 </body>
 
 </html>

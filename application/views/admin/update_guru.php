@@ -11,40 +11,54 @@
 </head>
 
 <body>
-    <div class="app-main__outer">
-        <?php foreach ($guru as $row): ?>
 
-            <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>" style="margin:25px" method="post" class="row">
-                <input name="id_guru" type="hidden" value="<?php echo $row->id_guru ?>">
-                <div class="mb-3 col-6">
-                    <label for="nama" class="form-label bold">Nama Guru</label>
-                    <input value="<?php echo $row->nama_guru ?>" type="text" class="form-control" id="nama" name="nama"
-                        aria-describedby="nama">
-                </div>
-                <div class="mb-3 col-6">
-                    <label for="nik" class="form-label">NIK</label>
-                    <input value="<?php echo $row->nik ?>" type="text" class="form-control" id="nik" name="nik">
-                </div>
-                <div class="mb-3 col-6">
-                    <label for="gender" class="form-label">Gender</label>
-                    <select name="gender" class="form-select" aria-label="Default select example">
-                        <option selected <?php echo $row->gender ?>>
-                            <?php echo $row->gender ?>
-                        </option>
-                        <option value="Perempuan">Perempuan</option>
-                        <option value="Laki-Laki">Laki-Laki</option>
-                    </select>
-                </div>
-                <div class="mb-3 col-6">
-                    <label for="mapel" class="form-label">Nama Mapel</label>
-                    <input value="<?php echo $row->mapel ?>" type="text" class="form-control" id="mapel" name="mapel">
-                </div>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <?php include('navbar.php'); ?>
+        <div class="ui-theme-settings">
+            <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
+                <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+            </button>
 
-                <button name="submit" type="submit" style="width:60px" class="btn btn-sm btn-success"
-                    name="submit">Update</button>
-            </form>
-        <?php endforeach ?>
-    </div>
+        </div>
+        <div class="app-main">
+
+            <?php include('sidebar.php'); ?>
+            <div class="app-main__outer">
+                <?php foreach ($guru as $row): ?>
+
+                    <form action="<?php echo base_url('admin/aksi_ubah_guru') ?>" style="margin:25px" method="post"
+                        class="row">
+                        <input name="id_guru" type="hidden" value="<?php echo $row->id_guru ?>">
+                        <div class="mb-3 col-6">
+                            <label for="nama" class="form-label bold">Nama Guru</label>
+                            <input value="<?php echo $row->nama_guru ?>" type="text" class="form-control" id="nama"
+                                name="nama" aria-describedby="nama">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="nik" class="form-label">NIK</label>
+                            <input value="<?php echo $row->nik ?>" type="text" class="form-control" id="nik" name="nik">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select name="gender" class="form-select" aria-label="Default select example">
+                                <option selected <?php echo $row->gender ?>>
+                                    <?php echo $row->gender ?>
+                                </option>
+                                <option value="Perempuan">Perempuan</option>
+                                <option value="Laki-Laki">Laki-Laki</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="mapel" class="form-label">Nama Mapel</label>
+                            <input value="<?php echo $row->mapel ?>" type="text" class="form-control" id="mapel"
+                                name="mapel">
+                        </div>
+
+                        <button name="submit" type="submit" style="width:60px" class="btn btn-sm btn-success"
+                            name="submit">Update</button>
+                    </form>
+                <?php endforeach ?>
+            </div>
 </body>
 
 </html>
