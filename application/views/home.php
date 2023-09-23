@@ -1352,7 +1352,7 @@
 
         <link rel="stylesheet" href="StyleIT.css">
 
-        <title>iTechnology</title>
+        <title>My Website</title>
     </head>
 
     <body>
@@ -1364,7 +1364,7 @@
             </ul> -->
 
             <nav>
-                <span class="logo">iTechnology</span>
+                <span class="logo">My Website</span>
                 <!-- <div class="menu-btn-3" onclick="menuBtnFunction(this)">
                     <span></span>
                 </div> -->

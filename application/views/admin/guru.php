@@ -167,10 +167,10 @@
                                                 <td data-cell="Aksi" class="text-center aksi">
                                                     <a href="<?php echo base_url('admin/update_guru/') . $row->id_guru ?>"
                                                         type="button" id="PopoverCustomT-1"
-                                                        class="btn btn-primary btn-sm edit">Update</a>
+                                                        class="btn-wide btn btn-primary">Update</a>
                                                     <button onclick="hapus(<?php echo $row->id_guru ?>)" type="button"
                                                         id="PopoverCustomT-1"
-                                                        class="btn btn-danger btn-sm hapus">Delete</button>
+                                                        class="btn-wide btn btn-danger">Delete</button>
                                                 </td>
                                             </tr>
 

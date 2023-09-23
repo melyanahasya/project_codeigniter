@@ -21,7 +21,7 @@
             padding: 0;
             margin: 0;
         }
-
+/* 
         .hapus {
             color: white;
             font-size: 15px;
@@ -31,7 +31,7 @@
             margin-right: 10px;
             color: white;
             font-size: 15px;
-        }
+        } */
 
         a {
             color: white;
@@ -48,23 +48,14 @@
                 margin: 1rem;
             }
 
-            .edit {
-                color: white;
-                font-size: 16px;
-                width: 4.5em;
-
-            }
+           
 
             .aksi {
                 display: flex;
-                gap: 2rem;
+                gap: 1rem;
             }
 
-            .hapus {
-                width: 5em;
-                font-size: 16px;
-            }
-
+           
             tbody {
                 text-align: left;
             }
@@ -177,10 +168,10 @@
                                                 <td data-cell="Aksi" class="text-center aksi">
                                                     <a href="<?php echo base_url('admin/update_siswa/') . $row->id_siswa ?>"
                                                         type="button" id="PopoverCustomT-1"
-                                                        class="btn btn-primary btn-sm edit">Update</a>
+                                                        class="btn-wide btn btn-primary ">Update</a>
                                                     <button onclick="hapus(<?php echo $row->id_siswa ?>)" type="button"
                                                         id="PopoverCustomT-1"
-                                                        class="btn btn-danger btn-sm hapus">Delete</button>
+                                                        class="btn-wide btn btn-danger ">Delete</button>
                                                 </td>
                                             </tr>
 
